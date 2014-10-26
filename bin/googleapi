@@ -1,0 +1,24 @@
+#!/bin/sh
+
+[ -z "${0%%*/*}" ] || exec "./$0" "$@"
+
+set -e
+
+case "$(python -V 2>&1)" in
+*"Python 2"*)
+    PYTHONPATH="${0%/*}/../httplib2/python2${PYTHONPATH+:$PYTHONPATH}"
+    ;;
+*"Python 3"*)
+    PYTHONPATH="${0%/*}/../httplib2/python3${PYTHONPATH+:$PYTHONPATH}"
+    ;;
+esac
+
+PYTHONPATH="${0%/*}/../oauth2client:$PYTHONPATH"
+PYTHONPATH="${0%/*}/../google-api-python-client:$PYTHONPATH"
+PYTHONPATH="${0%/*}/../uritemplate:$PYTHONPATH"
+PYTHONPATH="${0%/*}/../pyopenssl:$PYTHONPATH"
+PYTHONPATH="$(ls -d "${0%/*}/../pycrypto/build/"lib.* | head -1):$PYTHONPATH"
+
+export PYTHONPATH
+
+exec "$@"

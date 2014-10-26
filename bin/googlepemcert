@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Google service account credentials are distributed as ASN.1 encoded PKCS12
+# files. The pycrpto package can only deal with PEM encoded material so
+# the credentials must be converted before use.
+#
+# This script will accept the PKCS12 certificate from stdin, or from a file
+# specified with the openssl -in option. It will emit the PEM encoded
+# PKCS12 certificate on stdout, or to a file specified with the openssl -out
+# option.
+
+exec openssl pkcs12 -passin pass:notasecret -nodes "$@"
