@@ -1,0 +1,18 @@
+[submodule "uritemplate"]
+	path = uritemplate
+	url = git@github.com:uri-templates/uritemplate-py.git
+[submodule "pycrypto"]
+	path = pycrypto
+	url = git@github.com:dlitz/pycrypto.git
+[submodule "oauth2client"]
+	path = oauth2client
+	url = git@github.com:google/oauth2client.git
+[submodule "httplib2"]
+	path = httplib2
+	url = git@github.com:jcgregorio/httplib2.git
+[submodule "google-api-python-client"]
+	path = google-api-python-client
+	url = git@github.com:google/google-api-python-client.git
+[submodule "pyopenssl"]
+	path = pyopenssl
+	url = git@github.com:pyca/pyopenssl.git
