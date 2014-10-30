@@ -14,6 +14,12 @@ the google-api-python-client: httplib2, oauth2client, pycrypto, and uritemplate.
 is also provided, but it is only a partial configuration and its presence is primarily to force
 oauth2client to prefer pycrypto.
 
+Installation
+============
+
+    % git submodule update --init
+    % make
+
 Use
 ===
 
